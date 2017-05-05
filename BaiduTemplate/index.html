@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/baiduTemplate.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="baidudiv"></div>
+		<script type="text/html" id="baidu">
+		  <%=title%>
+			<%for(var i=0;i<data.list.length;i++){%>
+				<ul>
+					<li>
+						<p><%=data.list[i].id%></p>
+						<p><%=data.list[i].name%></p>
+						<p><%=data.list[i].age%></p>
+						<hr />
+					</li>
+				</ul>
+			<%}%>
+		</script>
+		<script type="text/javascript">
+			var data={
+				title:"baidu模板",
+				list:[
+					 {id:1,name:'aa',age:1},
+					 {id:2,name:'bb',age:2},
+					 {id:3,name:'cc',age:3},
+					 {id:4,name:'dd',age:4},
+					 {id:5,name:'ee',age:5}
+				]
+			}
+			var html=baidu.template("baidu",data);
+			document.getElementById("baidudiv").innerHTML=html;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/artTemplate.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="artdiv"></div>
+		<script type="text/html" id="art">
+			{{data.title}}
+			<ul>
+			    {{each data.list as value index}}
+				<li>
+					<p>{{value.id}}</p>
+					<p>{{value.name}}</p>
+					<p>{{value.age}}</p>
+					<hr />
+				</li>
+				{{/each}}
+			</ul>
+		</script>
+		<script type="text/javascript">
+			var data={
+				title:"art模板",
+				list:[
+				 {id:1,name:'aa',age:1},
+				 {id:2,name:'bb',age:2},
+				 {id:3,name:'cc',age:3},
+				 {id:4,name:'dd',age:4},
+				 {id:5,name:'ee',age:5}
+				]
+			}
+			var html=template("art",{data:data});
+			document.getElementById("artdiv").innerHTML=html;
+		</script>
+	</body>
+</html>
